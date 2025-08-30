@@ -1,0 +1,87 @@
+# Hotel Management System – Project Description
+
+The Hotel Management System is a comprehensive API-based solution designed to streamline and automate the operations of hotels. It is built using ASP.NET Core with Onion Architecture and SQL Server as the main database.
+
+The system covers all the essential hotel operations, starting from reservations to billing and payment, ensuring a seamless experience for both hotel staff and guests. Security is ensured with ASP.NET Core Identity and JWT authentication, while modular design provides scalability and maintainability.
+
+
+# Key Features
+
+User Management
+
+Different roles (Admin, Receptionist, Guest, Accountant, etc.).
+
+Secure login and JWT-based authentication.
+
+Role-based access control.
+
+Reservation Management
+
+Room booking (single, group, or corporate).
+
+Check-in / Check-out process.
+
+Reservation confirmation with minimum 20% payment.
+
+Payment Handling
+
+Integration with Stripe API for online payments.
+
+Webhook verification for payment confirmation.
+
+Payment history stored in Payment table.
+
+Room & Inventory Management
+
+Add, update, and manage rooms.
+
+Track availability in real-time.
+
+Manage room categories (Single, Double, Suite, etc.).
+
+Billing & Invoicing
+
+Generate invoices for reservations.
+
+Partial and full payments supported.
+
+Integration with insurance/contract modules (if needed).
+
+Reporting & Analytics
+
+Reservation reports (daily/weekly/monthly).
+
+Financial reports (payments, pending balances).
+
+Occupancy statistics.
+
+
+
+# Technical Architecture
+
+Architecture: Onion Architecture for clean separation of concerns.
+
+Backend: ASP.NET Core Web API.
+
+Authentication: ASP.NET Core Identity + JWT.
+
+Database: Microsoft SQL Server.
+
+ORM: Entity Framework Core.
+
+Payments: Stripe API Integration.
+
+Logging: Serilog (centralized logging).
+
+
+
+
+# Benefits
+
+Automates hotel operations → reduces manual errors.
+
+Enhances guest satisfaction with smooth booking & payment process.
+
+Scalable design → can be extended to include modules like Restaurant Management, Spa Booking, Housekeeping, etc.
+
+Secure → protects sensitive data with modern authentication and role-based access.
