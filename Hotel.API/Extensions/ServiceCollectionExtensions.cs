@@ -118,7 +118,7 @@ namespace Infrastructure.Extensions
                             new Room 
                             {
                                 Number = "101",
-                                Description = "Single Room with Sea View",
+                                Description = "Comfortable single room with sea view, ideal for solo travelers. Equipped with air conditioning, WiFi, and a relaxing seaside atmosphere.",
                                 Type = RoomType.Single,
                                 PricePerNight = 500,
                                 IsAvailable = true,
@@ -127,7 +127,8 @@ namespace Infrastructure.Extensions
                             },
                             new Room 
                             {
-                                Number = "102", Description = "Double Room", 
+                                Number = "102", 
+                                Description = "Spacious double room perfect for couples. Includes a large bed, WiFi, and TV for entertainment.", 
                                 Type = RoomType.Double, 
                                 PricePerNight = 800, 
                                 IsAvailable = true, 
@@ -137,7 +138,7 @@ namespace Infrastructure.Extensions
                             new Room
                             { 
                                 Number = "201", 
-                                Description = "Suite with Balcony", 
+                                Description = "Luxury suite with private balcony. Features air conditioning, mini bar, and safe box for extra comfort and security.", 
                                 Type = RoomType.Suite, 
                                 PricePerNight = 1500, 
                                 IsAvailable = false, 
@@ -147,7 +148,7 @@ namespace Infrastructure.Extensions
                             new Room
                             {
                                 Number = "202", 
-                                Description = "Triple Room", 
+                                Description = "Triple room suitable for families or groups. Includes WiFi, mini bar, and safe box for added convenience.", 
                                 Type = RoomType.Triple, 
                                 PricePerNight = 1200, 
                                 IsAvailable = false, 
@@ -157,7 +158,7 @@ namespace Infrastructure.Extensions
                             new Room
                             {
                                 Number = "301", 
-                                Description = "Family Room", 
+                                Description = "Spacious family room with kitchenette, perfect for longer stays. Equipped with air conditioning and WiFi for a homely experience.", 
                                 Type = RoomType.Family, 
                                 PricePerNight = 2000, 
                                 IsAvailable = true, 

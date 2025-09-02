@@ -10,7 +10,7 @@ namespace Hotel.Application.Interfaces
         Task DeleteReservationAsync(int id);
         Task UpdateReservationAsync(int id, UpdateReservationDto reservationDetailsDto);
         Task AddReservationAsync(CreateReservationDto reservationDetailsDto);
-        Task<ReservationDetailsDto?> FindReservationAsync(int? roomId, int? guestId);
+        Task<ReservationDetailsDto?> FindReservationAsync(int? guestId);
         Task<bool> UpdateReservationStatusAsync(int reservationId, ReservationStatus newStatus);
     }
 }

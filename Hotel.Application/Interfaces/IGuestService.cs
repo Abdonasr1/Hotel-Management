@@ -1,4 +1,5 @@
 ﻿using Hotel.Application.DTOs.GuestDtos;
+using Hotel.Domain.Entities;
 
 namespace Hotel.Application.Interfaces
 {

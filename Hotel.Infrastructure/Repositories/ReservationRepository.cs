@@ -15,7 +15,7 @@ namespace Hotel.Infrastructure.Repositories
             _context = context;
         }
 
-        public async Task<Reservation> SearchReservationsAsync(int? roomId, int? guestId, params Expression<Func<Reservation, object>>[] includes)
+        public async Task<Reservation> SearchReservationsAsync(int? guestId, params Expression<Func<Reservation, object>>[] includes)
         {
             var query = _context.Reservations.AsQueryable();
             
@@ -24,7 +24,6 @@ namespace Hotel.Infrastructure.Repositories
                     query = query.Include(include);
 
             query = query.Where(r =>
-                          (roomId.HasValue && r.RoomId == roomId.Value) ||
                           (guestId.HasValue && r.GuestId == guestId.Value)
             );
 

@@ -50,11 +50,12 @@ namespace Hotel.Application.Services
         public async Task DeleteReservationAsync(int id)
         {
             var reservation = await _unitOfWork.ReservationRepository.GetByIdAsync(r => r.Id == id);
-            if (reservation != null)
-            {
-                _unitOfWork.ReservationRepository.RemoveAsync(reservation);
-                await _unitOfWork.SaveChangesAsync();
-            }
+            if (reservation == null)
+                throw new KeyNotFoundException($"Reservation with Id {id} not found.");
+            
+             _unitOfWork.ReservationRepository.RemoveAsync(reservation);
+             await _unitOfWork.SaveChangesAsync();
+            
         }
 
         public async Task UpdateReservationAsync(int id, UpdateReservationDto updateReservationDto)
@@ -75,11 +76,10 @@ namespace Hotel.Application.Services
             return days * room.PricePerNight;
         }
 
-        public async Task<ReservationDetailsDto?> FindReservationAsync(int? roomId, int? guestId)
+        public async Task<ReservationDetailsDto?> FindReservationAsync(int? guestId)
         {
             var reservation = await _unitOfWork.ReservationRepository
-                .SearchReservationsAsync(roomId, guestId,
-                    r => r.Room,
+                .SearchReservationsAsync(guestId,
                     r => r.Guest);
 
             return _mapper.Map<ReservationDetailsDto>(reservation);

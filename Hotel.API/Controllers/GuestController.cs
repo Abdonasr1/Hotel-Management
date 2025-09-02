@@ -33,12 +33,12 @@ namespace Hotel.API.Controllers
         [Authorize(Roles = "Admin, Receptionist")]
         public async Task<ActionResult> UpDateGuest(int id, [FromBody] UpDateGuestDto guest)
         {
-            var upGuest = _guestService.GetGuestByIdAsync(id);
+            var upGuest = await _guestService.GetGuestByIdAsync(id);
             if (upGuest == null)
                 return NotFound("Guest not found");
 
             await _guestService.UpdateGuestAsync(id, guest);
-            return Ok();
+            return Ok("Guest updated successfully");
 
         }
 
@@ -51,7 +51,7 @@ namespace Hotel.API.Controllers
                 return BadRequest("Guest cannot be null");
             }
             await _guestService.AddGuestAsync(guest);
-            return Ok("Guest added successfully");
+            return Ok("The guest has been added.");
         }
 
         [HttpDelete("{id}")]

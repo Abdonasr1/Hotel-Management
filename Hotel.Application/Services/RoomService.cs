@@ -59,11 +59,12 @@ namespace Hotel.Application.Services
         public async Task DeleteRoomAsync(int id)
         {
             var room = await _unitOfWork.RoomRepository.GetByIdAsync(r => r.Id == id);
-            if (room != null)
-            {
-                _unitOfWork.RoomRepository.RemoveAsync(room);
-                await _unitOfWork.SaveChangesAsync();
-            }
+            if (room == null)
+                throw new KeyNotFoundException($"Room with Id {id} not found.");
+            
+            _unitOfWork.RoomRepository.RemoveAsync(room);
+            await _unitOfWork.SaveChangesAsync();
+            
         }
 
 

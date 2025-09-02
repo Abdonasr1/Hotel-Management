@@ -39,7 +39,7 @@ namespace Hotel.API.Controllers
                 return BadRequest("");
             await _reservationService.AddReservationAsync(createReservationDto);
             
-            return Ok();
+            return Ok("The reservation has been added.");
         }
 
         [HttpDelete("{id}")]
@@ -47,7 +47,7 @@ namespace Hotel.API.Controllers
         public async Task<ActionResult> DeleteReservation(int id)
         {
             await _reservationService.DeleteReservationAsync(id);
-            return Ok();
+            return Ok("Reservation deleted successfully");
         }
 
         //PUT: api/Rooms/5
@@ -66,9 +66,9 @@ namespace Hotel.API.Controllers
 
         [HttpGet("search")]
         [Authorize(Roles = "Admin, Receptionist")]
-        public async Task<IActionResult> SearchReservation([FromQuery] int? roomId, [FromQuery] int? guestId)
+        public async Task<IActionResult> SearchReservation([FromQuery] int? guestId)
         {
-            var reservation = await _reservationService.FindReservationAsync(roomId, guestId);
+            var reservation = await _reservationService.FindReservationAsync(guestId);
 
             if (reservation == null)
                 return NotFound("No reservation found matching the criteria.");

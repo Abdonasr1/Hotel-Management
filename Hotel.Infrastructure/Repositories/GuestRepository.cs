@@ -14,6 +14,9 @@ namespace Hotel.Infrastructure.Repositories
             _context = context;
         }
         
+
+
+
         public async Task<Guest?> GetByPhoneOrEmailAsync(string? phone, string? email, params Expression<Func<Guest, object>>[] includes)
         {
             var query =  _context.Guests.AsQueryable();

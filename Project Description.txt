@@ -85,3 +85,10 @@ Enhances guest satisfaction with smooth booking & payment process.
 Scalable design → can be extended to include modules like Restaurant Management, Spa Booking, Housekeeping, etc.
 
 Secure → protects sensitive data with modern authentication and role-based access.
+
+
+
+--PostMan
+https://documenter.getpostman.com/view/48041879/2sB3HjLLR6
+
+

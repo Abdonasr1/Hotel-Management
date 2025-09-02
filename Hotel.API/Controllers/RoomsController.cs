@@ -64,7 +64,7 @@ namespace Hotel.API.Controllers
                 return BadRequest("Room data is null.");
             }
             await _roomService.AddRoomAsync(room);
-            return Ok(room);
+            return Ok("The room has been added.");
         }
 
 
@@ -75,8 +75,7 @@ namespace Hotel.API.Controllers
         public async Task<IActionResult> DeleteRoom(int id)
         {
             await _roomService.DeleteRoomAsync(id);
-
-            return Ok();
+            return Ok("Room deleted successfully");
         }
 
         // GET: api/Rooms/Available

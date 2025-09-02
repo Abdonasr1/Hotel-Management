@@ -41,11 +41,10 @@ namespace Hotel.Application.Services
         public async Task DeleteGuestAsync(int id)
         {
             var guest = await _unitOfWork.GuestRepository.GetByIdAsync(g => g.Id == id);
-            if (guest != null)
-            {
-                _unitOfWork.GuestRepository.RemoveAsync(guest);
-                await _unitOfWork.SaveChangesAsync();
-            }
+            if (guest == null)
+                throw new KeyNotFoundException($"Guest with Id {id} not found.");
+            _unitOfWork.GuestRepository.RemoveAsync(guest);
+            await _unitOfWork.SaveChangesAsync();
         }
 
         public  async Task UpdateGuestAsync(int id, UpDateGuestDto guest)

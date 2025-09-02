@@ -32,6 +32,8 @@ namespace Hotel.Application.Mappers
             // Guest mappings
             CreateMap<CreateGuestDto, Guest>();
             CreateMap<UpDateGuestDto, Guest>().ReverseMap();
+            CreateMap<GuestDetailsDto, Guest>()
+                .ForMember(g => g.Id, opt => opt.MapFrom(g => g.Id));
             CreateMap<Guest, GuestDetailsDto>()
             .ForMember(dest => dest.ReservationId, opt => opt.MapFrom(src => src.Reservations.FirstOrDefault() != null ? src.Reservations.FirstOrDefault()!.Id : (int?)null))
             .ForMember(dest => dest.RoomId, opt => opt.MapFrom(src => src.Reservations.FirstOrDefault() != null ? src.Reservations.FirstOrDefault()!.RoomId : (int?)null))

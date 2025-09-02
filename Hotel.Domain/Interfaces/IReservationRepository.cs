@@ -6,6 +6,6 @@ namespace Hotel.Domain.Interfaces
 {
     public interface IReservationRepository : IRepository<Reservation>
     {
-        Task<Reservation> SearchReservationsAsync(int? guestId,int? roomId, params Expression<Func<Reservation, object>>[] includes);
+        Task<Reservation> SearchReservationsAsync(int? guestId, params Expression<Func<Reservation, object>>[] includes);
     }
 }
